@@ -32,8 +32,6 @@
 
 ;; TODO: timer to continously update the data
 
-;; TODO: use existing *envmon* buffer if possible?
-
 (defcustom envmon-url "192.168.10.101"
   "The URL to connect to for pico-environment-monitor."
   :group 'envmon
