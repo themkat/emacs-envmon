@@ -46,12 +46,16 @@
 
 (defun envmon ()
   (interactive)
-  (let* ((buffer (generate-new-buffer "*envmon*"))
+  (let* ((buffer (get-buffer-create "*envmon*"))
          (envmon-data (envmon--get-envmon-data))
          (temperature (assoc 'temperature envmon-data))
          (humidity (assoc 'humidity envmon-data))
          (eco2 (assoc 'eCO2 envmon-data)))
     (with-current-buffer buffer
+      ;; If we reuse a buffer, it might be readonly
+      (setq-local buffer-read-only nil)
+      (erase-buffer)
+
       (magit-insert-section ("Envmon")
         (magit-insert-heading "Environment Monitor")
         ;; TODO: is there a prettifer way to do this? or insert an image? :P 
