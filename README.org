@@ -1,0 +1,2 @@
+* envmon.el
+Wanted another excuse to create some Emacs Lisp code, so making more environment monitors that integrates with my pico-environment-monitor :)
