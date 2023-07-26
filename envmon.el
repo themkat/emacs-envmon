@@ -35,8 +35,8 @@
   :group 'envmon
   :type 'string)
 
-;; TODO: error handling of some kind?
 (defun envmon--get-envmon-data ()
+  "Get the actual data. Return value is an alist."
   (condition-case result
       (plz 'get (s-concat envmon-url "/environment.json") :as #'json-read)
     (plz-error
