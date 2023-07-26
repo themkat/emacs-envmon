@@ -28,8 +28,6 @@
 (require 'magit-section)
 (require 'plz)
 
-;; TODO: actually call the endpoints to fetch data. Is there a more modern request.el? or is that still the best?
-
 ;; TODO: timer to continously update the data
 
 (defcustom envmon-url "192.168.10.101"
@@ -39,7 +37,6 @@
 
 ;; TODO: error handling of some kind?
 (defun envmon--get-envmon-data ()
-  ;; TODO: should we convert it in any way?
   (plz 'get (s-concat envmon-url "/environment.json") :as #'json-read))
 
 (defun envmon ()
