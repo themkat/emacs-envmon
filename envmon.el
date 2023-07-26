@@ -37,15 +37,18 @@
 
 ;; TODO: error handling of some kind?
 (defun envmon--get-envmon-data ()
-  (plz 'get (s-concat envmon-url "/environment.json") :as #'json-read))
+  (condition-case result
+      (plz 'get (s-concat envmon-url "/environment.json") :as #'json-read)
+    (plz-error
+     (error "Could not connect to endpoint. Make sure the URL is correct and the environment monitor is running"))))
 
 (defun envmon ()
   (interactive)
-  (let* ((buffer (get-buffer-create "*envmon*"))
-         (envmon-data (envmon--get-envmon-data))
+  (let* ((envmon-data (envmon--get-envmon-data))
          (temperature (assoc 'temperature envmon-data))
          (humidity (assoc 'humidity envmon-data))
-         (eco2 (assoc 'eCO2 envmon-data)))
+         (eco2 (assoc 'eCO2 envmon-data))
+         (buffer (get-buffer-create "*envmon*")))
     (with-current-buffer buffer
       ;; If we reuse a buffer, it might be readonly
       (setq-local buffer-read-only nil)
