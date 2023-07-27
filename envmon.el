@@ -43,6 +43,7 @@
      (error "Could not connect to endpoint. Make sure the URL is correct and the environment monitor is running"))))
 
 (defun envmon ()
+  "Starts an environment monitor buffer with relevant data."
   (interactive)
   (let* ((envmon-data (envmon--get-envmon-data))
          (temperature (assoc 'temperature envmon-data))
