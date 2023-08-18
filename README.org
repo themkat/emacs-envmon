@@ -1,5 +1,7 @@
 * envmon.el
 Wanted another excuse to create some Emacs Lisp code, so making more environment monitors that integrates with my [[https://github.com/themkat/pico-environment-monitor][pico-environment-monitor]] :)
 
+#+ATTR_ORG: :width 800
+[[./screenshot.png]]
 
 For local development (when I don't have my pico-environment-monitor available), I use a custom mockserver setup which can be found [[https://github.com/themkat/AmiEnvMon/tree/main/utils][here (in the AmiEnvMon repo)]].
