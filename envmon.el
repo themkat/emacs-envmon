@@ -75,4 +75,5 @@
           (insert " ppm")
           (insert "\n")))
       (magit-section-mode)
+      (text-scale-increase 3)
       (switch-to-buffer buffer))))
