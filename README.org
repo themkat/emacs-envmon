@@ -5,3 +5,19 @@ Wanted another excuse to create some Emacs Lisp code, so making more environment
 [[./screenshot.png]]
 
 For local development (when I don't have my pico-environment-monitor available), I use a custom mockserver setup which can be found [[https://github.com/themkat/AmiEnvMon/tree/main/utils][here (in the AmiEnvMon repo)]].
+
+
+** Requirements
+envmon.el depend on:
+- [[https://github.com/alphapapa/plz.el][plz.el]]: For fetching data from API and getting the result as an associative list.
+- [[https://github.com/magit/magit/blob/main/lisp/magit-section.el][magit-section]]: To create magit like Emacs GUI
+
+
+It also requires that [[https://github.com/themkat/pico-environment-monitor][pico-environment-monitor]] is running.
+
+** Usage
+Configuration options:
+- =envmon-url=: this should be configured to be the base URL or IP that your environment monitor is running on.
+
+
+After making sure these are configured properly, you can simply run =M-x envmon= and the buffer with the data will show. (like the screenshot above).
