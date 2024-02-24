@@ -2,7 +2,7 @@
 
 ;; URL: https://github.com/themkat/emacs-envmon
 ;; Version: 0.0.1
-;; Package-Requires: ((emacs "24.4") (magit-section "3.3.0") (plz "0.7"))
+;; Package-Requires: ((emacs "24.4") (magit-section "3.3.0") (plz "0.7") (dash "2.19.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
